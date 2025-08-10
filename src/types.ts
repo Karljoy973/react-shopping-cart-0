@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export type Nullable<T> = T | null;
 export type Product = {
   id: string;
@@ -10,4 +12,13 @@ export type Product = {
   image: string;
 };
 
-export type ProductCardProps = {product: Product}
+export type ProductCardProps = { product: Product };
+export type ProductProviderProps = { children: ReactNode };
+export type ProductContextProviderProps = {
+  products: Nullable<Product[]>;
+  loading: boolean;
+  error: Nullable<string>;
+};
+
+export type CartProviderProps = { children: ReactNode };
+export type CartContextProviderProps = { cart: Partial<Product[]> };

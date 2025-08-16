@@ -19,14 +19,15 @@ export const ProductProvider = ({ children }: ProductProviderProps) => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("/api/products")
-        .then((res) => {
-          if (!res.ok) throw new Error("Impossible to fetch data"); // I could have something more granular
-          return res.json();
-        })
-        .then((res) => setProducts(res))
-        .catch((err) => setError(err))
-        .finally(() => setLoading(false));
+      fetch("http://localhost:3000/api/products")
+			.then((res) => {
+				if (!res.ok) throw new Error("Impossible to fetch data"); // I could have something more granular
+				return res.json();
+			})
+			.then((res) => res.products)
+			.then((res) => setProducts(res))
+			.catch((err) => setError(err))
+			.finally(() => setLoading(false));
     }, 2000);
   }, []);
 

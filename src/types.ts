@@ -11,6 +11,7 @@ export type Product = {
   rating: number;
   image: string;
 };
+export type QuantifiedProduct = Prettify<Product & { qty: number }>;
 
 export type ProductCardProps = { product: Product };
 export type ProductProviderProps = { children: ReactNode };
@@ -21,4 +22,9 @@ export type ProductContextProviderProps = {
 };
 
 export type CartProviderProps = { children: ReactNode };
-export type CartContextProviderProps = { cart: Partial<Product[]> };
+export type CartContextProviderProps = {
+  cart: Nullable<QuantifiedProduct[]>;
+  addToCart: Function;
+  removeFromCart: Function
+};
+export type Prettify<T> = { [K in keyof T]: T[K] } & {};

@@ -1,10 +1,12 @@
 import { TiShoppingCart } from "react-icons/ti";
 
 import ShoppingList from "./components/ShoppingList";
+import ShoppingCartHeader from "./components/ShoppingCardHeader";
 
 function App() {
   return (
     <>
+      <ShoppingCartHeader />
       <div className="min-h-screen bg-gray-100 p-6">
         <h1
           className="

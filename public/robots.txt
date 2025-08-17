@@ -1,0 +1,12 @@
+User-agent: *
+# Bloquer les pages sensibles ou inutiles pour l'indexation
+Disallow: /cart
+Disallow: /checkout
+Disallow: /login
+Disallow: /signup
+Disallow: /admin
+Disallow: /search
+
+# Autoriser le reste
+Allow: /
+
